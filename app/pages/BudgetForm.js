@@ -11,6 +11,12 @@ const MyBudgetForm = ({ navigation }) => {
   const [actualAmount, setActualAmount] = useState("");
   const dispatch = useDispatch();
 
+  const clearFields = () => {
+    setName((name) => "");
+    setPlannedAmount((amount) => "");
+    setActualAmount((amount) => "");
+  };
+
   const handleSave = () => {
     const data = {
       name: name,
@@ -23,6 +29,7 @@ const MyBudgetForm = ({ navigation }) => {
       text2: "Added your Budget Item to the List!",
     });
     dispatch(addToList(data));
+    clearFields();
   };
 
   const handleShow = () => {
