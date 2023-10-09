@@ -26,7 +26,7 @@ const MyBudgetForm = ({ navigation }) => {
     Toast.show({
       type: "success",
       text1: " Saved ✔️",
-      text2: "Added your Budget Item to the List!",
+      text2: `Added ${name} your Budget Item to the List!`,
     });
     dispatch(addToList(data));
     clearFields();
